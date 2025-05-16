@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { type_display } from "@/functions/fonts";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Dogs Next",
@@ -16,8 +17,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={type_display.variable}>
-        <Header />
-        {children}
+        <div className="App">
+          <Header />
+          <main className="AppMain">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

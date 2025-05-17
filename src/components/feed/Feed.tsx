@@ -4,7 +4,7 @@ import FeedFotos from "./FeedFotos";
 export default function Feed({ fotos }: { fotos: Foto[] }) {
   return (
     <>
-      <div>
+      <div className="animeLeft">
         <FeedFotos fotos={fotos} />
       </div>
     </>

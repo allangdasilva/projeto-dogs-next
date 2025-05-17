@@ -1,9 +1,12 @@
+import FormLogin from "@/components/login/FormLogin";
+
 export default async function LoginPage() {
   return (
     <>
-      <main>
-        <h1>Login</h1>
-      </main>
+      <div className="animeLeft">
+        <h1 className="title">Login</h1>
+        <FormLogin />
+      </div>
     </>
   );
 }

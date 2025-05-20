@@ -15,3 +15,8 @@ export function PERDEU_POST() {
     url: API_URL + "/api/password/lost",
   };
 }
+export function RESETAR_POST() {
+  return {
+    url: API_URL + "/api/password/reset",
+  };
+}

@@ -20,3 +20,8 @@ export function RESETAR_POST() {
     url: API_URL + "/api/password/reset",
   };
 }
+export function USUARIO_GET() {
+  return {
+    url: API_URL + "/api/user",
+  };
+}

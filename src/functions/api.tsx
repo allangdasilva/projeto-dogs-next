@@ -10,3 +10,8 @@ export function CRIAR_POST() {
     url: API_URL + "/api/user",
   };
 }
+export function PERDEU_POST() {
+  return {
+    url: API_URL + "/api/password/lost",
+  };
+}

@@ -2,13 +2,15 @@
 import getFotos, { Foto } from "@/actions/get-fotos";
 import FeedFotos from "./FeedFotos";
 import React from "react";
+import Loading from "../helper/Loading";
+import styles from "./FeedFotos.module.css";
 
 export default function Feed({
   fotos,
   user,
 }: {
   fotos: Foto[];
-  user: 0 | string;
+  user?: 0 | string;
 }) {
   const [photosFeed, setPhotosFeed] = React.useState<Foto[]>(fotos);
   const [page, setPage] = React.useState(1);
@@ -63,7 +65,13 @@ export default function Feed({
     <>
       <div className="animeLeft">
         <FeedFotos fotos={photosFeed} />
-        {loading && <p>Carregando...</p>}
+        <div className={styles.loadingWrapper}>
+          {infinite ? (
+            loading && <Loading />
+          ) : (
+            <p>Não existe mais postagens.</p>
+          )}
+        </div>
       </div>
     </>
   );

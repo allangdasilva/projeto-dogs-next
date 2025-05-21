@@ -24,7 +24,7 @@ export default async function fotoPost(state: {}, formData: FormData) {
       },
       body: formData,
     });
-    if (!response.ok) throw new Error("Email ou usuário já cadastrado.");
+    if (!response.ok) throw new Error("Erro ao postar, tente novamente.");
   } catch (error: unknown) {
     return apiError(error);
   }

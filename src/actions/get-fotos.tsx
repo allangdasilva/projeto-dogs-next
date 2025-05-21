@@ -20,14 +20,11 @@ type FotoParams = {
 };
 export default async function getFotos(
   { page = 1, total = 6, user = 0 }: FotoParams = {},
-  optionFront?: RequestInit
+  optionsFront?: RequestInit
 ) {
   try {
-    const options = optionFront || {
-      next: {
-        revalidate: 10,
-        tags: ["fotos"],
-      },
+    const options = optionsFront || {
+      next: { revalidate: 10, tags: ["fotos"] },
     };
     const { url } = FOTOS_GET({ page, total, user });
     const response = await fetch(url, options);

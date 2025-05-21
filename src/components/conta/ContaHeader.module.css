@@ -1,0 +1,116 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  position: relative;
+  margin-block: 1rem 2rem;
+}
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.nav a,
+.nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 0.2rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: #eee;
+  transition: 0.1s;
+
+  &:hover,
+  &:focus {
+    border-color: #333;
+    box-shadow: 0px 0px 0px 3px #eee;
+    outline: none;
+    background-color: #fff;
+  }
+}
+.mobileButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 0.2rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: #eee;
+  transition: 0.1s;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    border-radius: 2px;
+    box-shadow: 0px 6px currentColor, 0 -6px currentColor;
+    background-color: currentColor;
+    transition: 0.2s;
+  }
+  &:hover,
+  &:focus {
+    border-color: #fb1;
+    box-shadow: 0px 0px 0px 3px #fea;
+    outline: none;
+    color: #fb1;
+    background-color: #fff;
+  }
+}
+.mobileButtonActive {
+  border-color: #fb1;
+  box-shadow: 0px 0px 0px 3px #fea;
+  outline: none;
+  color: #fb1;
+  background-color: #fff;
+
+  &::after {
+    transform: rotate(-90deg);
+    width: 4px;
+    height: 4px;
+    box-shadow: 0px 8px currentColor, 0 -8px currentColor;
+  }
+}
+.navMobile {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  padding: 0 1rem;
+  opacity: 0;
+  transform: translate3d(-10px 0px 0px);
+  border-radius: 0.2rem;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  background-color: #fff;
+}
+.navMobileActive {
+  opacity: 1;
+  transform: initial;
+  z-index: 100;
+  pointer-events: initial;
+  transition: 0.3s;
+}
+.navMobile a,
+.navMobile button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-block: var(--padding-first);
+  border: none;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  background: none;
+
+  &:hover svg > * {
+    fill: #fb1;
+  }
+}
+.navMobile svg {
+  margin-right: var(--padding-first);
+}

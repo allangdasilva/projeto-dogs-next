@@ -7,7 +7,7 @@ import login from "./login";
 export default async function criarPost(state: {}, formData: FormData) {
   const username = formData.get("username") as string | null;
   const password = formData.get("password") as string | null;
-  const email = formData.get("password") as string | null;
+  const email = formData.get("email") as string | null;
   try {
     // Aqui é um bom momento para verificações, pq verificações de servidor não tem
     // como o usuário escapar delas. A biblioteca zod é uma bem utilizada para

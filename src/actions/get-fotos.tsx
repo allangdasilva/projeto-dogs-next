@@ -11,7 +11,13 @@ export type Foto = {
 };
 export default async function getFotos() {
   const response = await fetch(
-    "https://dogsapi.origamid.dev/json/api/photo/?_page=1&_total=6&_user=0"
+    "https://dogsapi.origamid.dev/json/api/photo/?_page=1&_total=6&_user=0",
+    {
+      next: {
+        revalidate: 10,
+        tags: ["fotos"],
+      },
+    }
   );
   return (await response.json()) as Foto[];
 }

@@ -43,3 +43,8 @@ export function FOTOS_GET({
     url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
   };
 }
+export function FOTO_GET(id: string) {
+  return {
+    url: API_URL + `/api/photo/${id}`,
+  };
+}

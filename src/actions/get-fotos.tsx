@@ -18,19 +18,19 @@ type FotoParams = {
   total?: number;
   user?: 0 | string;
 };
-export default async function getFotos({
-  page = 1,
-  total = 6,
-  user = 0,
-}: FotoParams = {}) {
+export default async function getFotos(
+  { page = 1, total = 6, user = 0 }: FotoParams = {},
+  optionFront?: RequestInit
+) {
   try {
-    const { url } = FOTOS_GET({ page, total, user });
-    const response = await fetch(url, {
+    const options = optionFront || {
       next: {
         revalidate: 10,
         tags: ["fotos"],
       },
-    });
+    };
+    const { url } = FOTOS_GET({ page, total, user });
+    const response = await fetch(url, options);
     if (!response.ok) throw new Error("Erro ao pegar as fotos.");
     const data = (await response.json()) as Foto[];
     return { data, ok: true, error: "" };

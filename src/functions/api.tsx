@@ -30,3 +30,16 @@ export function FOTO_POST() {
     url: API_URL + "/api/photo",
   };
 }
+export function FOTOS_GET({
+  page,
+  total,
+  user,
+}: {
+  page: number;
+  total: number;
+  user: 0 | string;
+}) {
+  return {
+    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+  };
+}

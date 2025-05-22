@@ -21,7 +21,7 @@ export default async function getFoto(id: string) {
       method: "GET",
       next: {
         revalidate: 60,
-        tags: ["fotos", "comentarios"],
+        tags: ["fotos", "comentario"],
       },
     });
     if (!response.ok) throw new Error("Erro ao pegar a foto.");

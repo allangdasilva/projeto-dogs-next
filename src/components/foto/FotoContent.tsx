@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import styles from "./FotoContent.module.css";
-// import PhotoComments from "./PhotoComments";
 import FotoDelete from "./FotoDelete";
 import Link from "next/link";
 import { useUser } from "@/context/user-context";
 import Image from "next/image";
 import { FotoData } from "@/actions/get-foto";
+import FotoComentarios from "./FotoComentarios";
 
 export default function FotoContent({
   data,
@@ -45,7 +45,7 @@ export default function FotoContent({
             </ul>
           </div>
         </div>
-        {/* <PhotoComments single={single} id={photo.id} comments={comments} /> */}
+        <FotoComentarios single={single} id={photo.id} comments={comments} />
       </div>
     </>
   );

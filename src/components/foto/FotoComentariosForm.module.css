@@ -1,0 +1,58 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 1rem;
+}
+.single {
+  margin: 1rem 0;
+}
+.textarea {
+  display: block;
+  width: 100%;
+  padding: var(--padding-first);
+  font-family: var(--type-first);
+  font-size: 1rem;
+  border: 1px solid #eee;
+  border-radius: 0.2rem;
+  resize: none;
+  background-color: #eee;
+
+  &:hover,
+  &:focus {
+    border-color: #fb1;
+    outline: none;
+    box-shadow: 0px 0px 0px 3px #fea;
+    background-color: #fff;
+  }
+}
+.button {
+  padding: 0 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+  &:hover svg path,
+  &:focus svg path {
+    fill: #fea;
+    stroke: #fb1;
+  }
+  &:hover svg g,
+  &:focus svg g {
+    animation: latir 0.6s infinite;
+  }
+}
+@keyframes latir {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -39,12 +39,10 @@
 @media screen and (max-width: 64rem) {
   .photo {
     grid-template-columns: minmax(20rem, 40rem);
+    grid-template-rows: repeat(4, auto);
     height: auto;
     /* max-height: calc(100vh - 4rem); */
     overflow-y: auto;
-  }
-  .img {
-    grid-row: 1;
   }
 }
 

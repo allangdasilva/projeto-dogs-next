@@ -58,3 +58,8 @@ export function COMENTARIO_POST(id: string) {
     url: API_URL + `/api/comment/${id}`,
   };
 }
+export function ESTATISTICAS_GET() {
+  return {
+    url: API_URL + `/api/stats`,
+  };
+}

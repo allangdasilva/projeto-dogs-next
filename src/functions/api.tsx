@@ -63,3 +63,8 @@ export function ESTATISTICAS_GET() {
     url: API_URL + `/api/stats`,
   };
 }
+export function VALIDAR_TOKEN() {
+  return {
+    url: API_URL + `/jwt-auth/v1/token/validate`,
+  };
+}

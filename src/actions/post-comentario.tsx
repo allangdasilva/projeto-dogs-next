@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 import { Comentario } from "./get-foto";
 
 export default async function comentarioPost(
-  state: { data?: null; ok?: boolean; error?: string },
+  state: { data: Comentario | null; ok: boolean; error: string },
   formData: FormData
 ) {
   const token = (await cookies()).get("token")?.value;

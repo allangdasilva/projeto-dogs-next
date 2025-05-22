@@ -30,7 +30,7 @@ export default function FotoContent({
               {user && user.username === photo.author ? (
                 <FotoDelete id={String(photo.id)} />
               ) : (
-                <Link href={`/conta/${photo.author}`}>@{photo.author}</Link>
+                <Link href={`/perfil/${photo.author}`}>@{photo.author}</Link>
               )}
               <span className={styles.preview}>{photo.acessos}</span>
             </p>

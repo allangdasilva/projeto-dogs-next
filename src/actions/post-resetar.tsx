@@ -4,7 +4,10 @@ import { RESETAR_POST } from "@/functions/api";
 import apiError from "@/functions/apiError";
 import { redirect } from "next/navigation";
 
-export default async function resetarPost(state: {}, formData: FormData) {
+export default async function resetarPost(
+  state: { data?: null; ok?: boolean; error?: string },
+  formData: FormData
+) {
   const login = formData.get("login") as string | null;
   const key = formData.get("key") as string | null;
   const password = formData.get("password") as string | null;

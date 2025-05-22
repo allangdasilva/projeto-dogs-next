@@ -4,7 +4,10 @@ import { CRIAR_POST } from "@/functions/api";
 import apiError from "@/functions/apiError";
 import login from "./login";
 
-export default async function criarPost(state: {}, formData: FormData) {
+export default async function criarPost(
+  state: { data?: null; ok?: boolean; error?: string },
+  formData: FormData
+) {
   const username = formData.get("username") as string | null;
   const password = formData.get("password") as string | null;
   const email = formData.get("email") as string | null;

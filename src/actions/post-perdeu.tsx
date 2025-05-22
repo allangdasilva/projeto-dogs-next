@@ -3,7 +3,10 @@
 import { PERDEU_POST } from "@/functions/api";
 import apiError from "@/functions/apiError";
 
-export default async function perdeuPost(state: {}, formData: FormData) {
+export default async function perdeuPost(
+  state: { data?: null; ok?: boolean; error?: string },
+  formData: FormData
+) {
   const login = formData.get("login") as string | null;
   const urlPerdeu = formData.get("url") as string | null;
 

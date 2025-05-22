@@ -6,7 +6,10 @@ import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export default async function fotoPost(state: {}, formData: FormData) {
+export default async function fotoPost(
+  state: { data?: null; ok?: boolean; error?: string },
+  formData: FormData
+) {
   const token = (await cookies()).get("token")?.value;
   const nome = formData.get("nome") as string | null;
   const peso = formData.get("peso") as string | null;

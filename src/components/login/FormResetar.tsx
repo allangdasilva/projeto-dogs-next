@@ -32,11 +32,6 @@ export default function FormResetar({
     error: "",
     data: null,
   });
-  const [url, setUrl] = React.useState("");
-
-  React.useEffect(() => {
-    setUrl(window.location.href.replace("perdeu", "resetar"));
-  }, []);
 
   return (
     <>

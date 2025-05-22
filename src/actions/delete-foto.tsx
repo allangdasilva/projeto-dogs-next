@@ -1,6 +1,6 @@
 "use server";
 
-import { FOTO_DELETE, FOTO_POST } from "@/functions/api";
+import { FOTO_DELETE } from "@/functions/api";
 import apiError from "@/functions/apiError";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";

@@ -21,7 +21,6 @@ export default function Feed({
   const fetching = React.useRef(false);
 
   function infiniteScroll() {
-    console.log("aconteceu");
     if (fetching.current) return;
     fetching.current = true;
     setLoading(true);
@@ -36,7 +35,7 @@ export default function Feed({
     if (page === 1) return;
     async function getPagePhotos(page: number) {
       const actionData = await getFotos(
-        { page, total: 6, user: 0 },
+        { page, total: 6, user: user },
         { cache: "no-store" }
       );
       if (actionData && actionData.data !== null) {
@@ -46,7 +45,7 @@ export default function Feed({
       }
     }
     getPagePhotos(page);
-  }, [page]);
+  }, [page, user]);
 
   React.useEffect(() => {
     if (infinite) {

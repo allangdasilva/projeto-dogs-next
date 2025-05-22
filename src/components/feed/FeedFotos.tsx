@@ -7,7 +7,7 @@ export default function FeedFotos({ fotos }: { fotos: Foto[] }) {
   return (
     <>
       <ul className={styles.feed}>
-        {fotos.map((foto, index) => (
+        {fotos.map((foto) => (
           <li className={styles.photo} key={foto.id + Math.random()}>
             <Link href={`/foto/${foto.id}`} scroll={false}>
               <Image

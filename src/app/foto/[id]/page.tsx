@@ -2,22 +2,20 @@ import getFoto from "@/actions/get-foto";
 import FotoContent from "@/components/foto/FotoContent";
 import { notFound } from "next/navigation";
 
-type FotoIdParams = {
-  params: {
+interface FotoIdParams {
+  params: Promise<{
     id: string;
-  };
-};
+  }>;
+}
 export async function generateMetadata({ params }: FotoIdParams) {
-  const parametro = await params;
-  const { data } = await getFoto(parametro.id);
+  const { data } = await getFoto((await params).id);
   if (!data) return { title: "Foto" };
   return {
     title: data.photo.title,
   };
 }
 export default async function FotoIdPage({ params }: FotoIdParams) {
-  const parametro = await params;
-  const { data } = await getFoto(parametro.id);
+  const { data } = await getFoto((await params).id);
   if (!data) return notFound();
   return (
     <>

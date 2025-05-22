@@ -4,10 +4,12 @@ import { COMENTARIO_POST } from "@/functions/api";
 import apiError from "@/functions/apiError";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import { Comentario } from "./get-foto";
 
-export default async function comentarioPost(state: {}, formData: FormData) {
+export default async function comentarioPost(
+  state: { data?: null; ok?: boolean; error?: string },
+  formData: FormData
+) {
   const token = (await cookies()).get("token")?.value;
   const comment = formData.get("comment") as string | null;
   const id = formData.get("id") as string | null;

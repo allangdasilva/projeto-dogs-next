@@ -6,7 +6,10 @@ import { cookies } from "next/headers";
 
 // Como foi feito o uso do formState o primeiro argumento é o state, depois o formData
 // não é necessário informar o tipo pois não será usado em nenhum momento.
-export default async function login(state: {}, formData: FormData) {
+export default async function login(
+  state: { data?: null; ok?: boolean; error?: string },
+  formData: FormData
+) {
   const username = formData.get("username") as string | null;
   const password = formData.get("password") as string | null;
   try {

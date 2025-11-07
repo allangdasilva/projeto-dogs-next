@@ -15,7 +15,7 @@
 ## 🚀 Tecnologias
 
 - **Frontend:** Next.js, TypeScript, CSS Modules
-- **Build / Deploy:** Vite, Vercel
+- **Build / Deploy:** Turbopack, Vercel
 - **Versionamento:** Git e GitHub
 
 ---
@@ -47,6 +47,6 @@
 ## 🧑‍💻 Autor
 
 **Allan Silva**  
-Desenvolvedor Front-end & UI/UX Designer
+Desenvolvedor Front-end & UX/UI Designer
 
-<!-- [LinkedIn](#) • [Portfólio](#) -->
+[LinkedIn](https://www.linkedin.com/in/allangdasilva/) • [Portfólio](https://portfolio-allan-silva.vercel.app/)
